@@ -3,7 +3,7 @@ pipeline {
     stages{
     stage('Checkout Source') {
       steps {
-        git url:'https://github.com/somyaagarwal06/jenkins.git', branch:'master'
+        git url:'https://github.com/somyaagarwal06/jenkins.git', branch:'main'
       }
     }
     stage('Deploy App') {
