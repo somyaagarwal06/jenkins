@@ -6,7 +6,7 @@ pipeline {
                 echo "Provisioning AKS Cluster"
                 bat "az account show "
 		bat "echo ${env.GIT_BRANCH}"
-		    bat "set branch = ${env.GIT_BRANCH}\n echo {branch}"
+		    bat "set branch = ${env.GIT_BRANCH}\n echo {%branch%}"
          }
         }
         
