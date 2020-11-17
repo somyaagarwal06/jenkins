@@ -4,10 +4,11 @@ pipeline {
         stage('AKS') {
             steps {
                 echo "Provisioning AKS Cluster"
-		echo "Hello"
+		echo "Hello update"
                 bat """ 
                 az account show 
-		"""		
+		"""	
+		    echo ${BRANCH_NAME}
           }
         }
         
