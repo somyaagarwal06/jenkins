@@ -10,9 +10,10 @@ pipeline {
             }
             steps {
                 echo "Provisioning AKS Cluster"
+		echo "Hello"
                 bat """ 
                 az account show 
-				"""
+		"""
 				
           }
         }
