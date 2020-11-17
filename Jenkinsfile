@@ -4,7 +4,7 @@ pipeline {
         stage('AKS') {
             steps {
                 echo "Provisioning AKS Cluster"
-		echo "Hello"
+		echo "Hello jenkins"
                 bat """ 
                 az account show 
 		"""	
