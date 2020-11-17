@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    parameters{
-        choice(name: 'Cluster', choices: ['AKS', 'Minikube'], description: '')
-    }
     stages {
 	    stage('Checkout SCM') {
             steps {
@@ -17,9 +14,6 @@ pipeline {
             }
         }
         stage('AKS') {
-		when {
-                expression { params.Cluster == 'AKS' }
-            }
             steps {
                 echo "Provisioning AKS Cluster"
 		echo "Hello"
