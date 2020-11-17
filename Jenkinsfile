@@ -8,7 +8,7 @@ pipeline {
                 bat """ 
                 az account show 
 		"""	
-		    echo ${env.GIT_BRANCH}
+		    echo env.GIT_BRANCH
           }
         }
         
