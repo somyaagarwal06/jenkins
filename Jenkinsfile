@@ -3,6 +3,10 @@ pipeline {
     stages {
         stage('AKS') {
             steps {
+		    script{
+		    branch= ${env.GIT_BRANCH}
+		    echo %branch%
+		    }
                 echo "Provisioning AKS Cluster"
                 bat """ 
                 az account show 
