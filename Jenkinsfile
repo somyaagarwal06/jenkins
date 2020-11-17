@@ -4,9 +4,9 @@ pipeline {
         stage('AKS') {
             steps {
 	         script {
-		    branch= ${env.GIT_BRANCH}
-		    echo %branch%
-	            }
+		    branch = ${env.GIT_BRANCH}
+	            echo ${branch}
+	          }
           }
         }
         
