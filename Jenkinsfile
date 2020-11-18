@@ -8,7 +8,6 @@ pipeline {
             steps {
                 echo "Provisioning AKS Cluster"
                 bat "az account show "
-		bat "echo $branch"
 		bat "az deployment group create --resource-group Infosys-cloud-cicd --template-file AKSTemplate/template.json --parameters AKSTemplate/parameters.json --parameters resourceName=INFCLD-%branch:~7%"
                 bat "az aks get-credentials --resource-group Infosys-cloud-cicd --name INFCLD-%branch:~7%"	
 		bat """ 
