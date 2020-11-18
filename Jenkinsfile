@@ -12,7 +12,8 @@ pipeline {
 		bat "az deployment group create --resource-group Infosys-cloud-cicd --template-file AKSTemplate/template.json --parameters AKSTemplate/parameters.json --parameters resourceName=INFCLD-%branch:~7%"
                 bat "az aks get-credentials --resource-group Infosys-cloud-cicd --name INFCLD-%branch:~7%"	
 		bat """ 
-		cd C:\\Resideo\\Services\\skaffold
+		cd C:\\Resideo\\Services\\skaffold\\managementapi\\templates
+		kubectl apply -f secrets.yaml
 		kubectl create secret docker-registry resideohelmkey --docker-server=greenqaacr.azurecr.io --docker-username=greenqaacr --docker-password=NjiFKy5v00vWyNkWpVQmE7zHicBKG/8B
 		skaffold run
 		helm list
