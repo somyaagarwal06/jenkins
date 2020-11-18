@@ -7,6 +7,7 @@ pipeline {
         stage('AKS') {
             steps {
                 echo "Provisioning AKS Cluster"
+		    echo "Update"
                 bat "az account show "
 		bat "echo $branch"
 		    
