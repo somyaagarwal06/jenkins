@@ -8,10 +8,10 @@ pipeline {
             steps {
                 echo "Provisioning AKS Cluster"
                 bat "az account show "
-		bat "az deployment group create --resource-group Infosys-cloud-cicd --template-file C:\\Resideo\\AKSTemplate\\template.json --parameters C:\\Resideo\\AKSTemplate\\parameters.json"
+		bat "az deployment group create --resource-group Infosys-cloud-cicd --template-file AKSTemplate/template.json --parameters AKSTemplate/parameters.json --parameters resourceName=INFCLD-%branch:~7%"
                 bat "az aks get-credentials --resource-group Infosys-cloud-cicd --name INFCLD-%branch:~7%"	
 		bat """ 
-		cd C:\\Resideo\\Services
+		cd C:\\Resideo\\Services\\skaffold
 		kubectl create secret docker-registry resideohelmkey --docker-server=greenqaacr.azurecr.io --docker-username=greenqaacr --docker-password=NjiFKy5v00vWyNkWpVQmE7zHicBKG/8B
 		skaffold run
 		helm list
