@@ -7,10 +7,9 @@ pipeline {
         stage('AKS') {
             steps {
                 echo "Provisioning AKS Cluster"
-		echo "Hello S"
                 bat "az account show "
 		bat "echo $branch"
-		bat "set branch = ${env.GIT_BRANCH}\naz deployment group create --resource-group Infosys-cloud-cicd --template-file C:\\Resideo\\AKSTemplate\\template.json --parameters C:\\Resideo\\AKSTemplate\\parameters.json --parameters resourceName=INFCLD-%branch:~7%"
+		bat "set branch = ${env.GIT_BRANCH}\naz deployment group create --resource-group Infosys-cloud-cicd --template-file /AKSTemplate/template.json --parameters /AKSTemplate/parameters.json --parameters resourceName=INFCLD-%branch:~7%"
          }
         }
         
