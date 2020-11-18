@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+		"location": {
+			"value": "eastus"
+		},
+        "networkPlugin": {
+            "value": "kubenet"
+        },
+		"dnsPrefix": {
+			"value": "INFCLD-AKS-dns"
+		},
+		"dnsPrefix": {
+			"value": "INFCLD-AKS-dns"
+		},
+        "networkPolicy": {
+            "value": "calico"
+        },
+        "enableRBAC": {
+            "value": true
+        },
+        "aadSessionKey": {
+            "value": ""
+        },
+        "enableHttpApplicationRouting": {
+            "value": false
+        },
+        "vmssNodePool": {
+            "value": true
+        },
+        "enableAutoScaling": {
+            "value": true
+        },     
+        "enableAvailabilityZones": {
+            "value": ["1","2","3"]
+        },
+        "serviceCidr": {
+            "value": "10.0.0.0/16"
+        },
+        "dnsServiceIP": {
+            "value": "10.0.0.10"
+        },
+        "dockerBridgeCidr": {
+            "value": "172.17.0.1/16"
+        },
+		"linuxAdminUsername": {
+           "value": "admin1234"
+        },
+		"sshRSAPublicKey": {
+           "value":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJZ4v2mZi6WPMK9oNRABDLqagru0y43gAolFKDWGHIxiAFoJ9iuFY3CftqxCb2YE77sOnRAZ8Oem6TtEqNRIB7GEZTTVdHx2mLTGuaoDt4R6jrqVGQo71zkcRLe0SckeM8JsgSiBmDKhNVzlv/y8cJvVBr9nyb0602skWFlESJFuwuOlGkCtsMJTju9nA+IdvTwu0UDrG3s/3QZm17AaLcK44BRHnoNjxa7+bWUHTbJynl5hLJ+3AgLb59m8SFzWgJA5T1ZwHZI4G23LS1ZRRaiNQuIemCaHLMySIEzYRvOeS8736XcY/ZQqDvRH816iuXP7iO7IOa8PwIKlrKQT5P somya@cc-9f880de1-5944c6c47d-jnw8l"
+       }
+	}
+}
