@@ -15,6 +15,7 @@ pipeline {
 		cd C:\\Resideo\\Services\\skaffold\\managementapi\\templates
 		kubectl apply -f secrets.yaml
 		kubectl create secret docker-registry resideohelmkey --docker-server=greenqaacr.azurecr.io --docker-username=greenqaacr --docker-password=NjiFKy5v00vWyNkWpVQmE7zHicBKG/8B
+		cd C:\\Resideo\\Services\\skaffold
 		skaffold run
 		helm list
 		kubectl get pods 
