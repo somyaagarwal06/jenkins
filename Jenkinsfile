@@ -43,8 +43,9 @@ pipeline {
 		kubectl get pods
 		'''
 		bat'''
+		cd C:\\Resideo\\Services\\courierapi\\templates
+		kubectl apply -f secrets.yaml
 		cd C:\\Resideo\\Services
-		kubectl create secret generic api
 		helm install courierapi courierapi
 		kubectl get pods
 		'''
